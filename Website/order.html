@@ -1,0 +1,114 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place an Order | Jayantilal Narotamdas & Co.</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: #0b0b0b; color: #ffffff; min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 40px 20px; }
+        .order-container { background: #111111; border: 1px solid rgba(214, 175, 55, 0.3); border-top: 4px solid #d4af37; padding: 40px; max-width: 600px; width: 100%; border-radius: 8px; box-shadow: 0 20px 50px rgba(0,0,0,0.8); }
+        h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 2rem; color: #ffffff; margin-bottom: 10px; text-align: center; letter-spacing: 1px; }
+        p.subtitle { color: #a0a0a0; font-size: 14px; text-align: center; margin-bottom: 30px; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: #d4af37; margin-bottom: 8px; font-weight: 600; }
+        input, select, textarea { width: 100%; background: #1a1a1a; border: 1px solid #333333; padding: 12px 15px; color: #ffffff; border-radius: 4px; font-size: 15px; transition: all 0.3s ease; }
+        input:focus, select:focus, textarea:focus { outline: none; border-color: #d4af37; box-shadow: 0 0 10px rgba(212, 175, 55, 0.1); }
+        .submit-btn { width: 100%; background-color: #d4af37; color: #000000; border: none; padding: 16px; border-radius: 4px; font-size: 14px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: all 0.3s ease; margin-top: 10px; }
+        .submit-btn:hover { background-color: #ffffff; transform: translateY(-2px); }
+        .back-link { display: block; text-align: center; margin-top: 20px; color: #888888; text-decoration: none; font-size: 13px; }
+        .back-link:hover { color: #d4af37; }
+    </style>
+</head>
+<body>
+
+    <div class="order-container">
+        <h2>Order Request</h2>
+        <p class="subtitle">Specify your velvet requirements below. Submitting will open WhatsApp to send your order.</p>
+        
+        <form id="orderForm" action="javascript:void(0);">
+            
+            <div class="form-group">
+                <label for="cust-name">Your Full Name</label>
+                <input type="text" id="cust-name" placeholder="E.g., Rajesh Kumar" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cust-phone">Phone / WhatsApp Number</label>
+                <input type="tel" id="cust-phone" placeholder="E.g., +91 98211 63124" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cust-address">Full Delivery Address</label>
+                <textarea id="cust-address" rows="3" placeholder="Flat/Shop No, Building Name, Street, City, State, Pincode" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="cust-velvet">Velvet Fabric Type / Color</label>
+                <select id="cust-velvet" required>
+                    <option value="" disabled selected>Select a fabric...</option>
+                    <option value="Premium Shaggy Blue Velvet">Premium Shaggy Blue Velvet</option>
+                    <option value="Royal Sapphire Blue">Royal Sapphire Blue</option>
+                    <option value="Deep Burgundy Velvet">Deep Burgundy Velvet</option>
+                    <option value="Emerald Green Crushed Velvet">Emerald Green Crushed Velvet</option>
+                    <option value="Ferozi Velvet">Ferozi Velvet</option>
+                    <option value="Coffee Velvet">Coffee Velvet</option>
+                    <option value="Pink Velvet">Pink Velvet</option>
+                    <option value="Lemon Velvet">Lemon Velvet</option>
+                    <option value="Black Velvet">Black Velvet</option>
+                    <option value="Rust Velvet">Rust Velvet</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="cust-qty">Quantity Required (in Meters)</label>
+                <input type="number" id="cust-qty" min="1" placeholder="E.g., 10" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cust-notes">Special Instructions</label>
+                <textarea id="cust-notes" rows="3" placeholder="Any specific requirements..."></textarea>
+            </div>
+
+            <button type="submit" id="submitBtn" class="submit-btn">Submit Order Request</button>
+        </form>
+
+        <a href="index.html" class="back-link">← Return to Homepage</a>
+    </div>
+
+    <script>
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            var name = document.getElementById("cust-name").value;
+            var phone = document.getElementById("cust-phone").value;
+            var address = document.getElementById("cust-address").value;
+            var velvet = document.getElementById("cust-velvet").value;
+            var qty = document.getElementById("cust-qty").value;
+            var notes = document.getElementById("cust-notes").value;
+            
+            var message = "*New Velvet Order Request*\n" +
+                          "---------------------------\n" +
+                          "👤 *Customer:* " + name + "\n" +
+                          "📞 *Phone:* " + phone + "\n" +
+                          "📍 *Address:* " + address + "\n" +
+                          "✨ *Fabric:* " + velvet + "\n" +
+                          "📏 *Quantity:* " + qty + " Meters\n" +
+                          "📝 *Instructions:* " + (notes ? notes : "None");
+            
+            var businessNumber = "919821163124"; 
+            var whatsappUrl = "https://wa.me/" + businessNumber + "?text=" + encodeURIComponent(message);
+            
+            // 1. Open the WhatsApp message in a new window/tab
+            window.open(whatsappUrl, '_blank');
+            
+            // 2. FORCE the main page to jump straight to your thank you page
+            // Using "./" strictly tells the browser to look in the exact same local folder
+            window.location.assign("./thankyou.html");
+        });
+    </script>
+
+</body>
+</html>
