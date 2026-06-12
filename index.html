@@ -1,324 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jayantilal Narotamdas & Co. | Premium Velvet Cloths</title>
+    <title>Jayantilal Narotamdas & Co.</title>
     <style>
-        * {
+        body {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Playfair Display', 'Georgia', serif;
-        }
-
-        /* Fixed structural background */
-        body, html {
-            height: 100%;
-            background-color: #0b0b0b; /* Fixed deep luxury black background */
-            background-image: radial-gradient(circle at 20% 50%, #161616 0%, #0b0b0b 80%);
+            background-color: #0d0d0d;
             color: #ffffff;
-            overflow-x: hidden;
-        }
-
-        /* Layout Container */
-        .page-container {
-            position: relative;
-            min-height: 100vh;
+            font-family: 'Georgia', serif;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-between;
-            padding: 5% 8%;
-            gap: 50px;
-            z-index: 2;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            box-sizing: border-box;
         }
 
-        /* Left Side: Business Info */
-        .business-info {
-            flex: 1;
-            max-width: 550px;
-            position: relative;
-            z-index: 5;
+        .container {
+            max-width: 900px;
+            padding: 20px;
+            width: 100%;
         }
 
-        .brand-badge {
-            font-family: 'Segoe UI', sans-serif;
-            font-size: 12px;
+        .sub-title {
+            color: #b89146;
             text-transform: uppercase;
-            letter-spacing: 4px;
-            color: #d4af37; /* Premium Gold */
-            margin-bottom: 20px;
-            display: block;
-            font-weight: 600;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
         }
 
         h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
+            margin: 0 0 20px 0;
             line-height: 1.2;
-            margin-bottom: 20px;
-            font-weight: 400;
-            letter-spacing: 1px;
+            font-weight: normal;
         }
 
-        p.description {
-            font-size: 1.15rem;
-            line-height: 1.6;
+        .description {
             color: #cccccc;
-            margin-bottom: 40px;
-            font-family: 'Segoe UI', sans-serif;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+            line-height: 1.6;
         }
 
-        .divider {
-            width: 80px;
-            height: 2px;
-            background-color: #d4af37;
-            margin-bottom: 40px;
-        }
-
-        /* Contact Details Grid */
-        .contact-box {
-            background: rgba(255, 255, 255, 0.03);
-            border-left: 3px solid #d4af37;
-            padding: 25px;
-            border-radius: 0 15px 15px 0;
-            margin-bottom: 40px;
-            font-family: 'Segoe UI', sans-serif;
+        /* Slideshow Container */
+        .slideshow-container {
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            margin: 0 auto 40px auto;
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
+            border-radius: 4px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        .contact-row {
-            margin-bottom: 15px;
-        }
-        
-        .contact-row:last-child {
-            margin-bottom: 0;
+        .mySlides {
+            display: none;
+            width: 100%;
+            height: 100%;
         }
 
-        .label {
-            display: block;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        .mySlides img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Fade Animation */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+
+        /* Legacy Story Styling */
+        .legacy-section {
+            max-width: 750px;
+            margin: 50px auto 40px auto;
+            padding: 0 15px;
+            box-sizing: border-box;
+        }
+
+        .legacy-title {
+            font-size: 2rem;
+            color: #b89146;
+            margin-bottom: 5px;
+            font-weight: normal;
+        }
+
+        .legacy-date {
+            font-size: 1rem;
+            font-style: italic;
             color: #888888;
-            margin-bottom: 4px;
+            margin-bottom: 25px;
         }
 
-        .value {
-            font-size: 1.2rem;
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
+        .legacy-text {
+            color: #dddddd;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: justify;
         }
 
-        .value:hover {
-            color: #d4af37;
+        .legacy-divider {
+            border: 0;
+            height: 1px;
+            background: rgba(184, 145, 70, 0.2);
+            margin: 40px auto;
+            width: 60%;
         }
 
-        /* Button */
-        .action-btn {
-            display: inline-block;
-            background-color: #d4af37;
-            color: #000000;
-            padding: 16px 40px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-family: 'Segoe UI', sans-serif;
-            font-weight: bold;
+        .features-title {
+            font-size: 1.6rem;
+            color: #b89146;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+            font-size: 1.05rem;
+            line-height: 2;
+            text-align: left;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .features-list li {
+            margin-bottom: 12px;
+        }
+
+        .features-list strong {
+            color: #b89146;
+        }
+
+        .btn {
+            background-color: #b89146;
+            color: #0d0d0d;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 13px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+            letter-spacing: 1px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s ease;
+            margin-top: 30px;
+            border-radius: 2px;
         }
 
-        .action-btn:hover {
-            background-color: #ffffff;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+        .btn:hover {
+            background-color: #d4af37;
         }
 
-        /* Right Side: Luxury Frame Slideshow */
-        .frame-wrapper {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 75vh;
-            max-width: 500px;
-            position: relative;
-        }
-
-        .picture-frame {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            border: 1px solid rgba(214, 175, 55, 0.3); /* Subtle gold accent border */
-            padding: 15px; /* Creates the matte layout look */
-            background-color: #111111;
-            border-radius: 8px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.8);
-        }
-
-        .slideshow-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            border-radius: 4px;
-        }
-
-        .slide {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
-            background-size: cover;
-            background-position: center;
-            transform: scale(1.05);
-        }
-
-        /* Active slide transitions in smoothly */
-        .slide.active {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        /* Decorative framing element */
-        .picture-frame::before {
-            content: '';
-            position: absolute;
-            top: -5px;
-            left: -5px;
-            right: -5px;
-            bottom: -5px;
-            border: 1px solid #d4af37;
-            pointer-events: none;
-            border-radius: 12px;
-            opacity: 0.5;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .page-container {
-                flex-direction: column;
-                justify-content: center;
-                padding: 60px 5%;
-                gap: 40px;
-            }
-
-            .business-info {
-                max-width: 100%;
-                text-align: center;
-                order: 2; /* Moves text below picture on mobile layout */
-            }
-
-            .divider {
-                margin: 0 auto 30px;
-            }
-
-            .contact-box {
-                border-left: none;
-                border-top: 3px solid #d4af37;
-                border-radius: 0 0 15px 15px;
-                text-align: left;
-            }
-
-            .frame-wrapper {
-                width: 100%;
-                height: 50vh;
-                max-width: 450px;
-                order: 1;
-            }
-            
-            h1 {
-                font-size: 2.5rem;
-            }
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+            .description { font-size: 1rem; margin-bottom: 30px; }
+            .legacy-title { font-size: 1.7rem; }
+            .legacy-text { font-size: 1rem; text-align: center; }
+            .features-list { padding: 0 10px; }
+            .btn { width: 100%; padding: 15px 0; box-sizing: border-box; }
         }
     </style>
 </head>
 <body>
-<section style="text-align: center; max-width: 800px; margin: 40px auto; padding: 20px; font-family: sans-serif; color: #ffffff;">
-    
-    <h2 style="font-size: 2.5rem; color: #f4d068; margin-bottom: 15px; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">Our Legacy of Luxury</h2>
-    <p style="font-size: 1.1rem; font-style: italic; color: #dddddd; margin-bottom: 30px;">Established in 1978</p>
-    
-    <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 20px; color: #ffffff;">
-        Welcome to <strong>JNCOVELVET</strong>. For nearly five decades, our family-owned business has been dedicated to sourcing and supplying the finest premium velvets and luxury textiles. What started as a passion for exquisite craftsmanship in 1978 has grown into a trusted legacy, serving designers, tailors, and creators who refuse to compromise on quality.
-    </p>
-    
-    <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 30px; color: #ffffff;">
-        Every piece of fabric in our collection is hand-selected by our family to ensure it meets our strict standards of rich texture, brilliant shimmer, and timeless durability. When you choose JNCOVELVET, you aren't just buying fabric—you are becoming a part of a generational tradition of elegance.
-    </p>
-    
-    <hr style="border: 0; height: 1px; background: rgba(255,255,255,0.2); margin: 40px 0;">
-    
-    <h3 style="font-size: 1.8rem; color: #f4d068; margin-bottom: 20px; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">Why Masters of Craft Choose Us</h3>
-    <ul style="list-style: none; padding: 0; font-size: 1.1rem; line-height: 2; color: #ffffff;">
-        <li>✨ <strong style="color: #f4d068;">Unmatched Premium Quality:</strong> Heavy drapes, deep rich colors, and brilliant luster.</li>
-        <li>👪 <strong style="color: #f4d068;">Family-Owned Values:</strong> Dedicated, personalized service for every single order.</li>
-        <li>🏆 <strong style="color: #f4d068;">45+ Years of Expertise:</strong> Deep industry knowledge helping you find the perfect match.</li>
-    </ul>
 
-</section>
-    <div class="page-container">
-        
-        <div class="business-info">
-            <span class="brand-badge">Established Excellence</span>
-            <h1>Jayantilal Narotamdas & Co.</h1>
-            <p class="description">A premium brand of quality velvets and the finest colours, containing every excellence you have dreamed of.</p>
-          
-            <div class="divider"></div>
+    <div class="container">
+        <div class="sub-title">Established Excellence Since 1978</div>
+        <h1>Jayantilal Narotamdas & Co.</h1>
+        <p class="description">
+            A premium brand of quality velvets and the finest colours, containing every excellence you have dreamed of.
+        </p>
 
-            <div class="contact-box">
-                <div class="contact-row">
-                    <span class="label">Phone Enquiry</span>
-                    <a href="tel:+919821163124" class="value">+91 98211 63124</a>
-                </div>
-                <div class="contact-row">
-                    <span class="label">Email Enquiry</span>
-                    <a href="mailto:jncovelvet@gmail.com" class="value">jncovelvet@gmail.com</a>
-                </div>
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="velvet.jpg" alt="Premium Velvet">
             </div>
-             <a href="order.html" class="action-btn">Place An Order Now</a>
-        </div>
-
-       <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px; max-width: 1200px; margin: 0 auto;">
-    <div style="flex: 1; min-width: 280px; max-width: 350px;">
-        <img src="blue.png" alt="Premium Velvet" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-    </div>
-          <div style="flex: 1; min-width: 280px; max-width: 350px;">
-        <img src="maroon.png" alt="Premium Velvet" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-    </div>
-    
-    <div style="flex: 1; min-width: 280px; max-width: 350px;">
-        <img src="silver.png" alt="Starlight Platinum" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-    </div>
-    
-    <div style="flex: 1; min-width: 280px; max-width: 350px;">
-        <img src="gold.png" alt="Royal Gilt Gold" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-    </div>
-</div>
-                </div>
+            <div class="mySlides fade">
+                <img src="silver.png" alt="Starlight Platinum">
+            </div>
+            <div class="mySlides fade">
+                <img src="gold.png" alt="Royal Gilt Gold">
             </div>
         </div>
 
+        <div class="legacy-section">
+            <h2 class="legacy-title">Our Legacy of Luxury</h2>
+            <div class="legacy-date">Established in 1978</div>
+            
+            <p class="legacy-text">
+                Welcome to <strong>JNCOVELVET</strong>. For nearly five decades, our family-owned business has been dedicated to sourcing and supplying the finest premium velvets and luxury textiles. What started as a passion for exquisite craftsmanship in 1978 has grown into a trusted legacy, serving designers, tailors, and creators who refuse to compromise on quality.
+            </p>
+            
+            <p class="legacy-text">
+                Every piece of fabric in our collection is hand-selected by our family to ensure it meets our strict standards of rich texture, brilliant shimmer, and timeless durability. When you choose JNCOVELVET, you aren't just buying fabric—you are becoming a part of a generational tradition of elegance.
+            </p>
+            
+            <hr class="legacy-divider">
+            
+            <h3 class="features-title">Why Masters of Craft Choose Us</h3>
+            <ul class="features-list">
+                <li>✨ <strong>Unmatched Premium Quality:</strong> Heavy drapes, deep rich colors, and brilliant luster.</li>
+                <li>👪 <strong>Family-Owned Values:</strong> Dedicated, personalized service for every single order.</li>
+                <li>🏆 <strong>45+ Years of Expertise:</strong> Deep industry knowledge helping you find the perfect match.</li>
+            </ul>
+        </div>
+
+        <div>
+            <a href="order.html" class="btn">Place an Order Now</a>
+        </div>
     </div>
+
     <script>
-        const slides = document.querySelectorAll('.slide');
-        let currentSlide = 0;
-        
-        function nextSlide() {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 3000); // Changes image every 3 seconds
         }
-        
-        // Rotates pictures every 4 seconds
-        setInterval(nextSlide, 4000);
     </script>
 
 </body>
-</html>
+</html> 
+
