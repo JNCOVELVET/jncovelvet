@@ -119,7 +119,7 @@
             max-width: 500px;
             width: 90%;
             position: relative;
-            margin: 50px auto 40px auto;
+            margin: 50px auto 10px auto;
             aspect-ratio: 4 / 3;
             overflow: hidden;
             border-radius: 4px;
@@ -136,6 +136,31 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+
+        /* Live Pricing Dynamic Tag */
+        .price-tag-box {
+            background: rgba(184, 145, 70, 0.1);
+            border: 1px solid rgba(184, 145, 70, 0.3);
+            border-radius: 4px;
+            padding: 12px 25px;
+            display: inline-block;
+            margin: 0 auto 30px auto;
+            min-width: 250px;
+        }
+
+        .product-name {
+            font-size: 1rem;
+            color: #aaaaaa;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .product-price {
+            font-size: 1.4rem;
+            color: #b89146;
+            font-weight: bold;
         }
 
         /* Fade Animation */
@@ -190,18 +215,7 @@
         <p class="description">
             A premium brand of quality velvets and the finest colours, containing every excellence you have dreamed of.
         </p>
-<div class="slideshow-container">
-            <div class="mySlides fade">
-                <img src="blue.png" alt="Premium Velvet">
-            </div>
-        
-            <div class="mySlides fade">
-                <img src="silver.png" alt="Starlight Platinum">
-            </div>
-            <div class="mySlides fade">
-                <img src="gold.png" alt="Royal Gilt Gold">
-            </div>
-        </div>
+
         <div class="legacy-section">
             <h2 class="legacy-title">Our Legacy of Luxury</h2>
             <div class="legacy-date">Established in 1978</div>
@@ -224,12 +238,40 @@
             </ul>
         </div>
 
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="maroon.png" alt="Premium Velvet">
+            </div>
+            <div class="mySlides fade">
+                <img src="silver.png" alt="Starlight Platinum">
+            </div>
+            <div class="mySlides fade">
+                <img src="gold.png" alt="Royal Gilt Gold">
+            </div>
+            <div class="mySlides fade">
+                <img src="blue.png" alt="Luxury Blue Fur">
+            </div>
+        </div>
+
+        <div class="price-tag-box">
+            <div id="fabric-name" class="product-name">Premium Velvet</div>
+            <div id="fabric-price" class="product-price">₹200 / metre</div>
+        </div>
+
         <div>
             <a href="order.html" class="btn">Place an Order Now</a>
         </div>
     </div>
 
     <script>
+        // Data arrays for names and prices to sync with the slideshow images
+        const fabricDetails = [
+            { name: "Premium Burgundy Velvet", price: "200" },
+            { name: "Starlight Platinum (Silver)", price: "110" },
+            { name: "Royal Gilt Gold", price: "110" },
+            { name: "Luxury Blue Fur", price: "500" }
+        ];
+
         let slideIndex = 0;
         showSlides();
 
@@ -242,6 +284,11 @@
             slideIndex++;
             if (slideIndex > slides.length) {slideIndex = 1}    
             slides[slideIndex-1].style.display = "block";  
+            
+            // Instantly change text data based on current active image frame
+            document.getElementById("fabric-name").innerText = fabricDetails[slideIndex-1].name;
+            document.getElementById("fabric-price").innerText = "₹" + fabricDetails[slideIndex-1].price + " / metre";
+
             setTimeout(showSlides, 3000); // Changes image every 3 seconds
         }
     </script>
