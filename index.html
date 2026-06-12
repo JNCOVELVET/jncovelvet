@@ -12,18 +12,32 @@
             color: #ffffff;
             font-family: 'Georgia', serif;
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             min-height: 100vh;
-            text-align: center;
             box-sizing: border-box;
         }
 
         .container {
-            max-width: 900px;
-            padding: 20px;
-            width: 100%;
+            display: flex;
+            max-width: 1200px;
+            width: 90%;
+            gap: 50px;
+            align-items: center;
+            padding: 40px 0;
+        }
+
+        .left-content {
+            flex: 1;
+            text-align: left;
+        }
+
+        .right-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         .sub-title {
@@ -32,94 +46,94 @@
             letter-spacing: 2px;
             font-size: 0.9rem;
             margin-bottom: 10px;
-            margin-top: 20px;
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin: 0 0 20px 0;
-            line-height: 1.2;
+            line-height: 1.1;
             font-weight: normal;
         }
 
         .description {
             color: #cccccc;
             font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto 30px auto;
             line-height: 1.6;
+            margin-bottom: 30px;
         }
 
-        /* Legacy Story Styling */
-        .legacy-section {
-            max-width: 750px;
-            margin: 0 auto 40px auto;
-            padding: 0 15px;
-            box-sizing: border-box;
+        /* Sleek Live Pricing Box */
+        .price-container {
+            margin-bottom: 30px;
+            border-left: 3px solid #b89146;
+            padding-left: 15px;
         }
 
-        .legacy-title {
-            font-size: 2rem;
-            color: #b89146;
-            margin-bottom: 5px;
-            font-weight: normal;
-            margin-top: 40px;
-        }
-
-        .legacy-date {
-            font-size: 1rem;
-            font-style: italic;
+        .product-name {
+            font-size: 0.9rem;
             color: #888888;
-            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
         }
 
-        .legacy-text {
-            color: #dddddd;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 20px;
-            text-align: justify;
-        }
-
-        .legacy-divider {
-            border: 0;
-            height: 1px;
-            background: rgba(184, 145, 70, 0.2);
-            margin: 40px auto;
-            width: 60%;
-        }
-
-        .features-title {
+        .product-price {
             font-size: 1.6rem;
             color: #b89146;
-            margin-bottom: 20px;
-            font-weight: normal;
+            font-weight: bold;
         }
 
-        .features-list {
-            list-style: none;
-            padding: 0;
-            font-size: 1.05rem;
-            line-height: 2;
-            text-align: left;
-            max-width: 480px;
-            margin: 0 auto;
+        .contact-box {
+            background-color: #141414;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 2px solid #b89146;
+            margin-bottom: 30px;
+            max-width: 350px;
         }
 
-        .features-list li {
-            margin-bottom: 12px;
+        .contact-label {
+            color: #666666;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
         }
 
-        .features-list strong {
-            color: #b89146;
+        .contact-info {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: #ffffff;
         }
 
-        /* Slideshow Container */
+        .contact-info:last-child {
+            margin-bottom: 0;
+        }
+
+        .btn {
+            background-color: #b89146;
+            color: #0d0d0d;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #d4af37;
+        }
+
+        /* Slideshow Layout */
         .slideshow-container {
             max-width: 500px;
-            width: 90%;
+            width: 100%;
             position: relative;
-            margin: 50px auto 10px auto;
             aspect-ratio: 4 / 3;
             overflow: hidden;
             border-radius: 4px;
@@ -138,32 +152,6 @@
             object-fit: cover;
         }
 
-        /* Live Pricing Dynamic Tag */
-        .price-tag-box {
-            background: rgba(184, 145, 70, 0.1);
-            border: 1px solid rgba(184, 145, 70, 0.3);
-            border-radius: 4px;
-            padding: 12px 25px;
-            display: inline-block;
-            margin: 0 auto 30px auto;
-            min-width: 250px;
-        }
-
-        .product-name {
-            font-size: 1rem;
-            color: #aaaaaa;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 4px;
-        }
-
-        .product-price {
-            font-size: 1.4rem;
-            color: #b89146;
-            font-weight: bold;
-        }
-
-        /* Fade Animation */
         .fade {
             animation-name: fade;
             animation-duration: 1.5s;
@@ -174,99 +162,167 @@
             to {opacity: 1}
         }
 
-        .btn {
-            background-color: #b89146;
-            color: #0d0d0d;
-            border: none;
-            padding: 15px 40px;
+        /* Corporate Story Section (Scroll Down) */
+        .legacy-outer {
+            width: 100%;
+            background-color: #080808;
+            padding: 60px 0;
+            border-top: 1px solid #1a1a1a;
+        }
+
+        .legacy-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .legacy-title {
+            font-size: 2.2rem;
+            color: #b89146;
+            margin-bottom: 5px;
+            font-weight: normal;
+        }
+
+        .legacy-date {
             font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: background 0.3s ease;
-            margin-top: 10px;
-            margin-bottom: 40px;
-            border-radius: 2px;
+            font-style: italic;
+            color: #666666;
+            margin-bottom: 30px;
         }
 
-        .btn:hover {
-            background-color: #d4af37;
+        .legacy-text {
+            color: #bbbbbb;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
         }
 
-        /* Mobile Adjustments */
-        @media (max-width: 600px) {
-            h1 { font-size: 2.2rem; }
-            .description { font-size: 1rem; }
-            .legacy-title { font-size: 1.7rem; }
-            .legacy-text { font-size: 1rem; text-align: center; }
-            .features-list { padding: 0 10px; }
+        .legacy-divider {
+            border: 0;
+            height: 1px;
+            background: rgba(184, 145, 70, 0.2);
+            margin: 40px auto;
+            width: 50%;
+        }
+
+        .features-title {
+            font-size: 1.6rem;
+            color: #b89146;
+            margin-bottom: 25px;
+            font-weight: normal;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+            font-size: 1.1rem;
+            line-height: 2;
+            text-align: left;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .features-list li {
+            margin-bottom: 10px;
+        }
+
+        .features-list strong {
+            color: #b89146;
+        }
+
+        /* Mobile Layout Shift */
+        @media (max-width: 900px) {
+            body { display: block; }
+            .container { flex-direction: column; text-align: center; padding: 40px 20px; width: 100%; box-sizing: border-box;}
+            .left-content { text-align: center; width: 100%; }
+            h1 { font-size: 2.5rem; }
+            .price-container { border-left: none; padding-left: 0; margin: 0 auto 30px auto; }
+            .contact-box { margin: 0 auto 30px auto; }
             .btn { width: 100%; padding: 15px 0; box-sizing: border-box; }
+            .slideshow-container { margin-top: 20px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="sub-title">Established Excellence Since 1978</div>
-        <h1>Jayantilal Narotamdas & Co.</h1>
-        <p class="description">
-            A premium brand of quality velvets and the finest colours, containing every excellence you have dreamed of.
-        </p>
+    <div style="display: flex; flex-direction: column; width: 100%; align-items: center;">
+        
+        <div class="container">
+            
+            <div class="left-content">
+                <div class="sub-title">Established Excellence</div>
+                <h1>Jayantilal Narotamdas & Co.</h1>
+                <p class="description">
+                    A premium brand of quality velvets and the finest colours, containing every excellence you have dreamed of.
+                </p>
 
-        <div class="legacy-section">
-            <h2 class="legacy-title">Our Legacy of Luxury</h2>
-            <div class="legacy-date">Established in 1978</div>
-            
-            <p class="legacy-text">
-                Welcome to <strong>JNCOVELVET</strong>. For nearly five decades, our family-owned business has been dedicated to sourcing and supplying the finest premium velvets and luxury textiles. What started as a passion for exquisite craftsmanship in 1978 has grown into a trusted legacy, serving designers, tailors, and creators who refuse to compromise on quality.
-            </p>
-            
-            <p class="legacy-text">
-                Every piece of fabric in our collection is hand-selected by our family to ensure it meets our strict standards of rich texture, brilliant shimmer, and timeless durability. When you choose JNCOVELVET, you aren't just buying fabric—you are becoming a part of a generational tradition of elegance.
-            </p>
-            
-            <hr class="legacy-divider">
-            
-            <h3 class="features-title">Why Masters of Craft Choose Us</h3>
-            <ul class="features-list">
-                <li>✨ <strong>Unmatched Premium Quality:</strong> Heavy drapes, deep rich colors, and brilliant luster.</li>
-                <li>👪 <strong>Family-Owned Values:</strong> Dedicated, personalized service for every single order.</li>
-                <li>🏆 <strong>45+ Years of Expertise:</strong> Deep industry knowledge helping you find the perfect match.</li>
-            </ul>
+                <div class="price-container">
+                    <div id="fabric-name" class="product-name">Premium Velvet</div>
+                    <div id="fabric-price" class="product-price">₹200 / metre</div>
+                </div>
+
+                <div class="contact-box">
+                    <div class="contact-label">Phone Enquiry</div>
+                    <div class="contact-info">+91 98211 63124</div>
+                    <div class="contact-label">Email Enquiry</div>
+                    <div class="contact-info">jncovelvet@gmail.com</div>
+                </div>
+
+                <div>
+                    <a href="order.html" class="btn">Place an Order Now</a>
+                </div>
+            </div>
+
+            <div class="right-content">
+                <div class="slideshow-container">
+                    <div class="mySlides fade">
+                        <img src="maroon.png" alt="Premium Velvet">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="silver.png" alt="Starlight Platinum">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="gold.png" alt="Royal Gilt Gold">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="blue.png" alt="Luxury Blue Fur">
+                    </div>
+                </div>
+            </div>
+
         </div>
 
-        <div class="slideshow-container">
-            <div class="mySlides fade">
-                <img src="maroon.png" alt="Premium Velvet">
-            </div>
-            <div class="mySlides fade">
-                <img src="silver.png" alt="Starlight Platinum">
-            </div>
-            <div class="mySlides fade">
-                <img src="gold.png" alt="Royal Gilt Gold">
-            </div>
-            <div class="mySlides fade">
-                <img src="blue.png" alt="Luxury Blue Fur">
+        <div class="legacy-outer">
+            <div class="legacy-section">
+                <h2 class="legacy-title">Our Legacy of Luxury</h2>
+                <div class="legacy-date">Established in 1978</div>
+                
+                <p class="legacy-text">
+                    Welcome to <strong>JNCOVELVET</strong>. For nearly five decades, our family-owned business has been dedicated to sourcing and supplying the finest premium velvets and luxury textiles. What started as a passion for exquisite craftsmanship in 1978 has grown into a trusted legacy, serving designers, tailors, and creators who refuse to compromise on quality.
+                </p>
+                
+                <p class="legacy-text">
+                    Every piece of fabric in our collection is hand-selected by our family to ensure it meets our strict standards of rich texture, brilliant shimmer, and timeless durability. When you choose JNCOVELVET, you aren't just buying fabric—you are becoming a part of a generational tradition of elegance.
+                </p>
+                
+                <hr class="legacy-divider">
+                
+                <h3 class="features-title">Why Masters of Craft Choose Us</h3>
+                <ul class="features-list">
+                    <li>✨ <strong>Unmatched Premium Quality:</strong> Heavy drapes, deep rich colors, and brilliant luster.</li>
+                    <li>👪 <strong>Family-Owned Values:</strong> Dedicated, personalized service for every single order.</li>
+                    <li>🏆 <strong>45+ Years of Expertise:</strong> Deep industry knowledge helping you find the perfect match.</li>
+                </ul>
             </div>
         </div>
 
-        <div class="price-tag-box">
-            <div id="fabric-name" class="product-name">Premium Velvet</div>
-            <div id="fabric-price" class="product-price">₹200 / metre</div>
-        </div>
-
-        <div>
-            <a href="order.html" class="btn">Place an Order Now</a>
-        </div>
     </div>
 
     <script>
-        // Data arrays for names and prices to sync with the slideshow images
+        // Sync items with the exact images sequence
         const fabricDetails = [
-            { name: "Premium Burgundy Velvet", price: "200" },
+            { name: "Premium Velvet (Maroon)", price: "200" },
             { name: "Starlight Platinum (Silver)", price: "110" },
             { name: "Royal Gilt Gold", price: "110" },
             { name: "Luxury Blue Fur", price: "500" }
@@ -285,11 +341,11 @@
             if (slideIndex > slides.length) {slideIndex = 1}    
             slides[slideIndex-1].style.display = "block";  
             
-            // Instantly change text data based on current active image frame
+            // Push active frame data to the price tags
             document.getElementById("fabric-name").innerText = fabricDetails[slideIndex-1].name;
             document.getElementById("fabric-price").innerText = "₹" + fabricDetails[slideIndex-1].price + " / metre";
 
-            setTimeout(showSlides, 3000); // Changes image every 3 seconds
+            setTimeout(showSlides, 3000); 
         }
     </script>
 
