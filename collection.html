@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Collection | Jayantilal Narotamdas & Co.</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0d0d0d;
+            color: #ffffff;
+            font-family: 'Georgia', serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        /* Unified Navigation Bar */
+        .navbar {
+            width: 100%;
+            background-color: #080808;
+            padding: 20px 0;
+            border-bottom: 1px solid #1a1a1a;
+            text-align: center;
+        }
+
+        .navbar a {
+            color: #cccccc;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover, .navbar a.active {
+            color: #b89146;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 90%;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .sub-title {
+            color: #b89146;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0 0 50px 0;
+            line-height: 1.2;
+            font-weight: normal;
+        }
+
+        /* Responsive Grid Layout */
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            width: 100%;
+        }
+
+        /* Premium Product Cards */
+        .product-card {
+            background-color: #141414;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid #1a1a1a;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: #b89146;
+        }
+
+        .image-container {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
+            background-color: #0d0d0d;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .image-container img {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 25px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-name {
+            font-size: 1.2rem;
+            color: #ffffff;
+            margin: 0 0 10px 0;
+            font-weight: normal;
+        }
+
+        .product-price {
+            font-size: 1.3rem;
+            color: #b89146;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .card-btn {
+            background-color: transparent;
+            color: #b89146;
+            border: 1px solid #b89146;
+            padding: 10px 0;
+            width: 100%;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            margin-top: auto;
+            transition: background 0.3s ease, color 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .product-card:hover .card-btn {
+            background-color: #b89146;
+            color: #0d0d0d;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.3rem; }
+            .navbar a { margin: 0 10px; font-size: 0.85rem; }
+            .collection-grid { gap: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">Our Story</a>
+        <a href="collection.html" class="active">Collection</a>
+        <a href="contact.html">Contact</a>
+        <a href="order.html">Place Order</a>
+    </nav>
+
+    <div class="container">
+        <div class="sub-title">Exquisite Masterpieces</div>
+        <h1>The Velvet Collection</h1>
+        
+        <div class="collection-grid">
+            
+            <div class="product-card">
+                <div class="image-container">
+                    <img src="maroon.png" alt="Antique Maroon Velvet">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Antique Maroon</h3>
+                    <div class="product-price">₹200 / metre</div>
+                    <a href="order.html" class="card-btn">Inquire / Order</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-container">
+                    <img src="blue.png" alt="Luxury Blue Fur">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Luxury Blue Fur</h3>
+                    <div class="product-price">₹500 / metre</div>
+                    <a href="order.html" class="card-btn">Inquire / Order</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-container">
+                    <img src="silver.png" alt="Starlight Platinum">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Starlight Platinum</h3>
+                    <div class="product-price">₹110 / metre</div>
+                    <a href="order.html" class="card-btn">Inquire / Order</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-container">
+                    <img src="gold.png" alt="Royal Gilt Gold">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Royal Gilt Gold</h3>
+                    <div class="product-price">₹110 / metre</div>
+                    <a href="order.html" class="card-btn">Inquire / Order</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-container">
+                    <img src="ruby.png" alt="Jewel Ruby Red">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Jewel Ruby Red</h3>
+                    <div class="product-price">₹200 / metre</div>
+                    <a href="order.html" class="card-btn">Inquire / Order</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-container">
+                    <img src="emerald.png" alt="Emerald Green">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Emerald Green</h3>
+                    <div class="product-price">₹205 / metre</div>
+                    <a href="order.html" class="card-btn">Inquire / Order</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-container">
+                    <img src="black.png" alt="Obsidian Black">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Obsidian Black</h3>
+                    <div class="product-price">₹200 / metre</div>
+                    <a href="order.html" class="card-btn">Inquire / Order</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-container">
+                    <img src="yellow.png" alt="Sicilian Lemon Yellow">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Sicilian Lemon Yellow</h3>
+                    <div class="product-price">₹185 / metre</div>
+                    <a href="order.html" class="card-btn">Inquire / Order</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
