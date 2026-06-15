@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Jayantilal Narotamdas & Co.</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0d0d0d;
+            color: #ffffff;
+            font-family: 'Georgia', serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        /* Unified Navigation Bar */
+        .navbar {
+            width: 100%;
+            background-color: #080808;
+            padding: 20px 0;
+            border-bottom: 1px solid #1a1a1a;
+            text-align: center;
+        }
+
+        .navbar a {
+            color: #cccccc;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 0.9.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover, .navbar a.active {
+            color: #b89146;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 90%;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .sub-title {
+            color: #b89146;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0 0 40px 0;
+            line-height: 1.2;
+            font-weight: normal;
+        }
+
+        .story-block {
+            text-align: justify;
+            margin-bottom: 40px;
+        }
+
+        .story-text {
+            color: #cccccc;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .values-grid {
+            display: flex;
+            gap: 25px;
+            margin-top: 50px;
+            text-align: left;
+        }
+
+        .value-card {
+            flex: 1;
+            background-color: #141414;
+            padding: 30px;
+            border-radius: 6px;
+            border-top: 2px solid #b89146;
+        }
+
+        .value-title {
+            color: #b89146;
+            font-size: 1.2rem;
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+
+        .value-desc {
+            color: #aaaaaa;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .btn {
+            background-color: #b89146;
+            color: #0d0d0d;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s ease;
+            margin-top: 40px;
+            border-radius: 2px;
+        }
+
+        .btn:hover {
+            background-color: #d4af37;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.3rem; }
+            .story-text { font-size: 1rem; text-align: center; }
+            .values-grid { flex-direction: column; }
+            .navbar a { margin: 0 10px; font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">Our Story</a>
+        <a href="contact.html">Contact</a>
+        <a href="order.html">Place Order</a>
+    </nav>
+
+    <div class="container">
+        <div class="sub-title">A Heritage of Elegance</div>
+        <h1>Our Story</h1>
+        
+        <div class="story-block">
+            <p class="story-text">
+                Founded in 1978, <strong>Jayantilal Narotamdas & Co.</strong> emerged from a profound appreciation for rich textiles and impeccable design. What began as a dedicated family pursuit has matured over nearly five decades into a premier legacy brand, serving couturiers, luxury interior creators, and master tailors across generations.
+            </p>
+            <p class="story-text">
+                Our specialty resides in selecting the absolute highest tier of velvets and artisanal fabrics. From brilliant depth of color to magnificent, heavy-draped lusters, every single meter we supply carries the meticulous stamp of family oversight. We do not just source material; we secure the very foundational textures of architectural and fashion masterpieces.
+            </p>
+        </div>
+
+        <div class="values-grid">
+            <div class="value-card">
+                <h3 class="value-title">Uncompromised Selection</h3>
+                <p class="value-desc">Every production run undergoes strict, hands-on quality testing for color accuracy, weight density, and structural durability.</p>
+            </div>
+            <div class="value-card">
+                <h3 class="value-title">Family Devotion</h3>
+                <p class="value-desc">As a multigenerational business, our word is our bond. We build real relationships with our design partners and clients.</p>
+            </div>
+        </div>
+
+        <a href="order.html" class="btn">View Our Collection</a>
+    </div>
+
+</body>
+</html>
