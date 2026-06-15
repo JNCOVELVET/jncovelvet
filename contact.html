@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Jayantilal Narotamdas & Co.</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0d0d0d;
+            color: #ffffff;
+            font-family: 'Georgia', serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        /* Unified Navigation Bar */
+        .navbar {
+            width: 100%;
+            background-color: #080808;
+            padding: 20px 0;
+            border-bottom: 1px solid #1a1a1a;
+            text-align: center;
+        }
+
+        .navbar a {
+            color: #cccccc;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover, .navbar a.active {
+            color: #b89146;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 90%;
+            padding: 60px 0;
+        }
+
+        .sub-title {
+            color: #b89146;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0 0 50px 0;
+            line-height: 1.2;
+            font-weight: normal;
+            text-align: center;
+        }
+
+        /* Split Screen Configuration */
+        .contact-layout {
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;
+        }
+
+        .contact-details {
+            flex: 1;
+        }
+
+        .contact-form-container {
+            flex: 1.2;
+            background-color: #141414;
+            padding: 40px;
+            border-radius: 6px;
+            border-left: 3px solid #b89146;
+        }
+
+        .info-panel {
+            background-color: #141414;
+            padding: 25px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .panel-label {
+            color: #666666;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .panel-content {
+            font-size: 1.15rem;
+            color: #ffffff;
+        }
+
+        .panel-content a {
+            color: #b89146;
+            text-decoration: none;
+        }
+
+        /* Premium Form Controls */
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            color: #aaaaaa;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        input, textarea {
+            width: 100%;
+            background-color: #0d0d0d;
+            border: 1px solid #2a2a2a;
+            color: #ffffff;
+            padding: 12px;
+            font-family: 'Georgia', serif;
+            font-size: 1rem;
+            border-radius: 4px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #b89146;
+            outline: none;
+        }
+
+        .submit-btn {
+            background-color: #b89146;
+            color: #0d0d0d;
+            border: none;
+            width: 100%;
+            padding: 15px 0;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .submit-btn:hover {
+            background-color: #d4af37;
+        }
+
+        @media (max-width: 900px) {
+            h1 { font-size: 2.3rem; }
+            .contact-layout { flex-direction: column; }
+            .contact-details, .contact-form-container { width: 100%; }
+            .navbar a { margin: 0 10px; font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">Our Story</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="order.html">Place Order</a>
+    </nav>
+
+    <div class="container">
+        <div class="sub-title">Connect With Our Team</div>
+        <h1>Get In Touch</h1>
+        
+        <div class="contact-layout">
+            
+            <div class="contact-details">
+                <div class="info-panel">
+                    <div class="panel-label">Direct Calling Line</div>
+                    <div class="panel-content">+91 98211 63124</div>
+                </div>
+                
+                <div class="info-panel">
+                    <div class="panel-label">Digital Correspondence</div>
+                    <div class="panel-content"><a href="mailto:jncovelvet@gmail.com">jncovelvet@gmail.com</a></div>
+                </div>
+
+                <div class="info-panel">
+                    <div class="panel-label">Corporate Office Availability</div>
+                    <div class="panel-content" style="font-size: 1rem; color: #aaaaaa; line-height: 1.6;">
+                        Monday – Saturday<br>
+                        10:00 AM – 7:00 PM IST
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-container">
+                <form action="https://formsubmit.co/jncovelvet@gmail.com" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required placeholder="E.g., Devendra Shah">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contact">Phone Number / Email</label>
+                        <input type="text" id="contact" name="contact" required placeholder="Where can we reach you?">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Fabric Specifications / General Inquiry</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Tell us about your project requirements..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
